@@ -3,7 +3,6 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
 var sequelize = require("../config/connection.js");
 
-// Creates a "Book" model that matches up with DB
 var User = sequelize.define("user", {
   name: Sequelize.STRING,
   image: Sequelize.STRING

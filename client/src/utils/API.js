@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Get all books from Google Books API based upon search parameters
-  getUsers: function(query) {
-    return axios.get(`/api/books/${query}`);
+  getUsers: function() {
+    return axios.get(`/user/all`);
   },
   // Get all saved books from the database
   getUser: function(id) {

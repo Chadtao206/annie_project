@@ -4,12 +4,15 @@ import Navbar from "../../components/Navbar";
 import API from "../../utils/API";
 import { Input, FormBtn } from "../../components/Form";
 import { Container, Col, Row } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+import UserCard from "../../components/UserCard";
 
 class Search extends Component {
   state = {
-    books: [],
-    bookSearch: ""
+    users: []
+  };
+
+  componentDidMount = () => {
+    API.getUsers().then(res => this.setState({ users: res.data }));
   };
 
   render() {
@@ -41,6 +44,15 @@ class Search extends Component {
           <br />
           <Container>
             <h4>Search Results:</h4>
+            <Row>
+              {this.state.users.map(user => {
+                return (
+                  <Col size="xs-12 sm-6 md-3">
+                    <UserCard info={user} />
+                  </Col>
+                );
+              })}
+            </Row>
           </Container>
         </Container>
       </div>

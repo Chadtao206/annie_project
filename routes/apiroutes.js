@@ -12,6 +12,13 @@ module.exports = function(app) {
       })
       .catch(err => console.log(err));
   });
+
+  app.get("/user/all", function(req, res) {
+    console.log("getting all users");
+    db.user.findAll().then(result => {
+      res.json(result);
+    });
+  });
 };
 
 // router.route("/user/create").post(function(req, res) {
