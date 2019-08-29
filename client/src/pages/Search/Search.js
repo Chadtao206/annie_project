@@ -8,12 +8,20 @@ import UserCard from "../../components/UserCard";
 
 class Search extends Component {
   state = {
-    users: []
+    users: [],
+    currentUser: ""
   };
 
   componentDidMount = () => {
     API.getUsers().then(res => this.setState({ users: res.data }));
   };
+
+  handleAdd = id => {
+    console.log(`friend id is ${id}`);
+    API.addFriend(id).then(data => console.log(data));
+  };
+
+  handleChat = () => {};
 
   render() {
     return (
@@ -48,7 +56,7 @@ class Search extends Component {
               {this.state.users.map(user => {
                 return (
                   <Col size="xs-12 sm-6 md-3">
-                    <UserCard info={user} />
+                    <UserCard info={user} handleAdd={this.handleAdd} />
                   </Col>
                 );
               })}

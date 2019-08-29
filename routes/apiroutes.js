@@ -19,6 +19,16 @@ module.exports = function(app) {
       res.json(result);
     });
   });
+
+  app.post("/user/addfriend", function(req, res) {
+    console.log(`adding friend ${req.body.id} to list!`);
+    db.favorites
+      .create({ filter: req.body.id })
+      .then(result => {
+        res.json(result);
+      })
+      .catch(err => console.log(err));
+  });
 };
 
 // router.route("/user/create").post(function(req, res) {
