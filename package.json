@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "mate",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Mate Demo",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.6.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
@@ -39,5 +39,14 @@
     "reactstrap": "^8.0.1",
     "sequelize": "^5.14.0",
     "webpack-dev-server": "3.1.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anniezoyinlee/mate.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/anniezoyinlee/mate/issues"
+  },
+  "homepage": "https://github.com/anniezoyinlee/mate#readme"
 }
